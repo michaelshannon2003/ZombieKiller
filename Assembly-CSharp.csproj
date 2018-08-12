@@ -62,10 +62,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Camera\CameraControl.cs" />
+    <Compile Include="Assets\Scripts\Character\Health.cs" />
     <Compile Include="Assets\Scripts\Managers\GameManager.cs" />
     <Compile Include="Assets\Scripts\Managers\PlayerManager.cs" />
     <Compile Include="Assets\Scripts\Managers\ZombieManager.cs" />
-    <Compile Include="Assets\Scripts\Player\PlayerHealth.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerShooting.cs" />
     <Compile Include="Assets\Scripts\Shell\ShellExplosion.cs" />
@@ -74,7 +74,6 @@
     <Compile Include="Assets\Scripts\Tank\TankShooting.cs" />
     <Compile Include="Assets\Scripts\UI\UIDirectionControl.cs" />
     <Compile Include="Assets\Scripts\Zombie\ZombieAttack.cs" />
-    <Compile Include="Assets\Scripts\Zombie\ZombieHealth.cs" />
     <Compile Include="Assets\Scripts\Zombie\ZombieMovement.cs" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>E:/workspace/ZombieKiller/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>

@@ -9,16 +9,15 @@ namespace Complete
 
         private void Start ()
         {
-            // If it isn't destroyed by then, destroy the shell after it's lifetime.
             Destroy (gameObject, m_MaxLifeTime);
         }
 
 
         private void OnTriggerEnter (Collider other)
         {
-                // ... and find their rigidbody.
-                if(other.gameObject.tag == "Zombies"){
-                    other.GetComponentInParent<ZombieHealth>().TakeDamage(m_damagetaken);
+                               
+                if(other.CompareTag("Zombies")){
+                    other.GetComponentInParent<Health>().TakeDamage(m_damagetaken);
                 }
            
             Destroy(gameObject);

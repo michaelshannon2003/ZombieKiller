@@ -3,18 +3,16 @@ using UnityEngine.UI;
 
 namespace Complete
 {
-    public class ZombieHealth : MonoBehaviour
+    public class Health : MonoBehaviour
     {
        // public  Slider m_Slider;                             // The slider to represent how much health the tank currently has.
-      //  private Image m_FillImage;                           // The image component of the slider.
+        private Image m_FillImage;                           // The image component of the slider.
         public Color m_FullHealthColor = Color.green;       // The color the health bar will be when on full health.
         public Color m_ZeroHealthColor = Color.red;         // The color the health bar will be when on no health.
       
-        private float m_StartingHealth = 100f;                      // How much health the tank currently has.
+        public float m_StartingHealth = 100f;                      // How much health the tank currently has.
         private float m_CurrentHealth;                      // How much health the tank currently has.
-
-
-     
+        [HideInInspector] public bool m_Dead;
 
 
         private void OnEnable()
@@ -23,7 +21,7 @@ namespace Complete
             m_CurrentHealth = m_StartingHealth;
            
             // Update the health slider's value and color.
-            //SetHealthUI();
+            SetHealthUI();
         }
 
 
@@ -43,22 +41,22 @@ namespace Complete
         }
 
 
-        private void SetHealthUI ()
+        private void SetHealthUI()
         {
-            // Set the slider's value appropriately.
-            //m_Slider.value = m_CurrentHealth;
-            MeshRenderer[] renderers = gameObject.GetComponentsInChildren<MeshRenderer> ();
-            // Interpolate the color of the bar between the choosen colours based on the current percentage of the starting health.
-            foreach(MeshRenderer render in renderers){
-                render.material.color = Color.Lerp (m_ZeroHealthColor, m_FullHealthColor, m_CurrentHealth / m_StartingHealth);
+            foreach (MeshRenderer render in gameObject.GetComponentsInChildren<MeshRenderer>())
+            {
+                render.material.color = Color.Lerp(m_ZeroHealthColor, m_FullHealthColor, m_CurrentHealth / m_StartingHealth);
             }
         }
 
 
-        public void OnDeath ()
+        // Used during the phases of the game where the player should be able to control their tank.
+        public void OnDeath()
         {
-             Destroy(gameObject);
-          
+
+            m_Dead = true;
+            gameObject.SetActive(false);
+
         }
     }
 }

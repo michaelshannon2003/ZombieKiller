@@ -55,24 +55,19 @@ namespace Complete
 
         private void Update ()
         {
-            
-            if(!m_Rigidbody.GetComponent<PlayerHealth>().m_Dead){
+                       
             // Store the value of both input axes.
             m_MovementInputValue = Input.GetAxis (m_MovementAxisName);
             m_TurnInputValue = Input.GetAxis (m_TurnAxisName);
-            }         
+                     
         }
 
-
-
         private void FixedUpdate ()
-        {
-             if(!m_Rigidbody.GetComponent<PlayerHealth>().m_Dead){
+        {            
             // Adjust the rigidbodies position and orientation in FixedUpdate.
             Move ();
             Turn ();
-             }
-        }
+         }
 
 
         private void Move ()

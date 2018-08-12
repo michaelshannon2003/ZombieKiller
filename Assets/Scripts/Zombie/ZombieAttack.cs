@@ -4,7 +4,7 @@ namespace Complete
 {
     public class ZombieAttack : MonoBehaviour
     {
-       
+       public int m_damagetaken = 100;
 
 
         private void Start ()
@@ -15,16 +15,10 @@ namespace Complete
 
         private void OnTriggerEnter (Collider other)
         {
-
-                // ... and find their rigidbody.
-                if(other.gameObject.tag == "Player"){   
-                   PlayerHealth targetHealth = other.gameObject.GetComponentInParent<Rigidbody>().GetComponent<PlayerHealth> ();
-                   targetHealth.OnDeath();
-                }
-                       
-                
+            if (other.CompareTag("Player"))
+            {
+               other.GetComponentInParent<Health>().TakeDamage(m_damagetaken);
+            }                
         }
-
-
     }
 }
