@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 54801168858185640}
   - component: {fileID: 114553345591572396}
   - component: {fileID: 114561638037614294}
-  - component: {fileID: 114935340015387712}
+  - component: {fileID: 114037928240470358}
   m_Layer: 0
   m_Name: Zombies
   m_TagString: Zombies
@@ -103,6 +103,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &114037928240470358
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1979992185661690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 906369046bcbc024ba7acd2712365e65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_FullHealthColor: {r: 0, g: 1, b: 0, a: 1}
+  m_ZeroHealthColor: {r: 1, g: 0, b: 0, a: 1}
+  m_StartingHealth: 100
+  m_Dead: 0
 --- !u!114 &114553345591572396
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -126,19 +141,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 201020d22db525e499f36bcf8621c751, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114935340015387712
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1979992185661690}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 774af6e8c66a7ff46abc7ab388aaa838, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_FullHealthColor: {r: 0.995283, g: 1, b: 0.995283, a: 1}
-  m_ZeroHealthColor: {r: 0, g: 0, b: 0, a: 1}
+  m_damagetaken: 100
 --- !u!136 &136036877653154070
 CapsuleCollider:
   m_ObjectHideFlags: 1

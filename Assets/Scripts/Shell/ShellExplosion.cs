@@ -15,7 +15,7 @@ namespace Complete
 
         private void OnTriggerEnter (Collider other)
         {
-                               
+            Debug.Log("Hitting for " + m_damagetaken + "damage");
                 if(other.CompareTag("Zombies")){
                     other.GetComponentInParent<Health>().TakeDamage(m_damagetaken);
                 }
