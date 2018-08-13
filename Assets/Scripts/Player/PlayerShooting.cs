@@ -68,7 +68,7 @@ namespace Complete
         private void Fire()
         {
 
-            ScoreBoard.weapon = string.Format("Using {0}", weaponlist[currentWeapon].name);
+            WeaponUsed.weapon = string.Format("Using {0}", weaponlist[currentWeapon].name);
             //ScoreBoard.weapon = weaponlist[currentWeapon].name;
             // Set the fired flag so only Fire is only called once.
             m_Shell = weaponlist[currentWeapon].GetComponent<Rigidbody>();

@@ -28,11 +28,12 @@ namespace Complete
     
 
         // Used during the phases of the game where the player shouldn't be able to control their tank.
-        public void DisableControl ()
+        public void EnableControl (bool state)
         {
 
-            m_Instance.SetActive (false);
+            m_Instance.SetActive (state);
         }
+
 
 
       

@@ -45,21 +45,12 @@ namespace Complete
            
         }
 
-        public void DisableControl ()
-        {           
-            m_playerMovement.enabled = false;
-            m_playerShooting.enabled = false;
+      
 
-       
-          //  m_Instance.gameObject.SetActive(false) ;            
-        }
-
-        public void EnableControl()
+        public void EnableControl(bool state)
         {
-            m_playerMovement.enabled = true;
-            m_playerShooting.enabled = true;
-
-            m_CanvasGameObject.SetActive(true);
+            m_playerMovement.enabled = state;
+            m_playerShooting.enabled = state;           
         }
     }
 }
