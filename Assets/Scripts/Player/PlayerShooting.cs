@@ -23,14 +23,12 @@ namespace Complete
 
         private void Awake()
         {
-            
-
+            weaponlist = Resources.LoadAll<GameObject>("Prefabs/Weapons").ToList();
         }
 
         private void Start()
         {
-            weaponlist = Resources.FindObjectsOfTypeAll(typeof(GameObject)).Cast<GameObject>().Where(g => g.tag == "Weapon").ToList();
-               
+           
             m_FireButton = "Fire" + m_PlayerNumber;
            
         }
