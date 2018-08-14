@@ -74,6 +74,7 @@
     <Compile Include="Assets\Scripts\ScoreBoard\WeaponUsed.cs" />
     <Compile Include="Assets\Scripts\Shell\ShellExplosion.cs" />
     <Compile Include="Assets\Scripts\Shell\SwtichWeapons.cs" />
+    <Compile Include="Assets\Scripts\Shell\WeaponStats.cs" />
     <Compile Include="Assets\Scripts\Tank\TankHealth.cs" />
     <Compile Include="Assets\Scripts\Tank\TankMovement.cs" />
     <Compile Include="Assets\Scripts\Tank\TankShooting.cs" />

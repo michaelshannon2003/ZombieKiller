@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 135298288603403480}
   - component: {fileID: 54396191952680974}
   - component: {fileID: 114606983144703476}
+  - component: {fileID: 114844919390472532}
   m_Layer: 0
   m_Name: shotgun
   m_TagString: Weapon
@@ -114,6 +115,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_MaxLifeTime: 2
   m_damagetaken: 25
+--- !u!114 &114844919390472532
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1398214417141138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d3f427d6c80a4249bf28867fdd4b160, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinLaunchForce: 15
 --- !u!135 &135298288603403480
 SphereCollider:
   m_ObjectHideFlags: 1
