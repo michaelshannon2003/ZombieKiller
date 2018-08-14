@@ -19,4 +19,14 @@ public class RestartGame : MonoBehaviour {
         SceneManager.LoadScene(0);
     }
 
+    public void Quit()
+    {
+        Application.Quit();
+    }
+
+    public void SetPlayerName(string playername)
+    {
+        PlayerNameScoreBoard.displayname = playername;
+    }
+
 }

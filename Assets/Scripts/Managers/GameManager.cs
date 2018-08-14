@@ -37,7 +37,6 @@ namespace Complete
 
         private void Start()
         {
-           
             gameOverPanel.SetActive(false);
 
             SpawnAllPlayers();
@@ -69,9 +68,9 @@ namespace Complete
                 WeaponUsed.weapon = "";
                 DestroyZombies();
                 PlayerControl(false);
+                Canvas.ForceUpdateCanvases();
+                gameplay.text =  "Hey !!! " + PlayerNameScoreBoard.displayname + ",  You died";
 
-            
-                PlayerNameScoreBoard.displayname = string.Format("Brady died");
             }
 
         }
@@ -138,6 +137,7 @@ namespace Complete
             m_RoundNumber++;
             gameplay.text = "ROUND " + m_RoundNumber;
 
+       
             // Wait for the specified length of time until yielding control back to the game loop.
             yield return m_StartWait;
         }
