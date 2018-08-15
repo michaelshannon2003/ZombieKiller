@@ -5,7 +5,13 @@ namespace Complete
 {
     public class Health : MonoBehaviour
     {
-       // public  Slider m_Slider;                             // The slider to represent how much health the tank currently has.
+
+        #region EventPublisher
+        public delegate void DisplayDeath(string message);
+        public static event DisplayDeath OnHealthEventMessage;
+        #endregion EventPublisher
+
+        // public  Slider m_Slider;                             // The slider to represent how much health the tank currently has.
         private Image m_FillImage;                           // The image component of the slider.
         public Color m_FullHealthColor = Color.green;       // The color the health bar will be when on full health.
         public Color m_ZeroHealthColor = Color.red;         // The color the health bar will be when on no health.
@@ -56,6 +62,10 @@ namespace Complete
 
             m_Dead = true;
             gameObject.SetActive(false);
+            if (OnHealthEventMessage != null)
+            {
+                OnHealthEventMessage("A death occured !!!");
+            }
 
         }
     }

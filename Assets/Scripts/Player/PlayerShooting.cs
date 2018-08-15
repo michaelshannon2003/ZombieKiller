@@ -6,6 +6,12 @@ namespace Complete
 {
     public class PlayerShooting : MonoBehaviour
     {
+        #region EventPublisher
+        public delegate void DisplayWeaponSwitch(string message);
+        public static event DisplayWeaponSwitch OnWeaponEventMessage;
+        #endregion EventPublisher
+
+
         public int m_PlayerNumber = 1;              // Used to identify the different players.
 
         public Transform m_FireTransform;           // A child of the tank where the shells are spawned.
@@ -37,8 +43,7 @@ namespace Complete
         private void Update()
         {
            
-            // The fire axis is based on the player number.
-            Debug.Log("WeaponList " + weaponlist.Count());
+            // The fire axis is based on the player number.        
             if (Input.GetKeyDown(KeyCode.Q))
             {
                 Switchweapons();
@@ -53,6 +58,7 @@ namespace Complete
 
         private void Switchweapons()
         {
+           
             if (currentWeapon == (weaponlist.Count - 1))
             {
                 currentWeapon = 0;
@@ -61,14 +67,15 @@ namespace Complete
             {
                 currentWeapon++;
             }
-
+            if (OnWeaponEventMessage != null) {
+                OnWeaponEventMessage("Switched to " + weaponlist[currentWeapon].name);
+            }
         }
 
 
         private void Fire()
         {
 
-            WeaponUsed.weapon = string.Format("Using {0}", weaponlist[currentWeapon].name);
             //ScoreBoard.weapon = weaponlist[currentWeapon].name;
             // Set the fired flag so only Fire is only called once.
             var weapon = weaponlist[currentWeapon];

@@ -6,10 +6,14 @@ namespace Complete
     [Serializable]
     public class PlayerManager
     {
+
+
         // This class is to manage various settings on a tank.
         // It works with the GameManager class to control how the tanks behave
         // and whether or not players have control of their tank in the 
         // different phases of the game.
+        public delegate void SendMessage(string message);
+        public static event SendMessage OnWeaponSwitch;
 
         public Color m_PlayerColor;                             // This is the color this tank will be tinted.
         public Transform m_SpawnPoint;                          // The position and direction the tank will have when it spawns.        

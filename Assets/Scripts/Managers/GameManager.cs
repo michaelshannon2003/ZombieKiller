@@ -64,8 +64,7 @@ namespace Complete
             }
             else
             {
-                gameOverPanel.SetActive(true);
-                WeaponUsed.weapon = "";
+                gameOverPanel.SetActive(true);              
                 DestroyZombies();
                 PlayerControl(false);
                 Canvas.ForceUpdateCanvases();
@@ -166,7 +165,6 @@ namespace Complete
             DestroyZombies();
             PlayerControl(false);
             gameplay.text = "ROUND COMPLETE " + m_RoundNumber;
-            WeaponUsed.weapon = "";
             // Get a message based on the scores and whether or not there is a game winner and display it.        
             //    ClearZombies();
             // Wait for the specified length of time until yielding control back to the game loop.

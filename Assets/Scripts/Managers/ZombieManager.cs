@@ -6,7 +6,9 @@ namespace Complete
 {
     [Serializable]
     public class ZombieManager
-    {     
+    {
+     
+
         [HideInInspector] public int m_ZombieNumber;            // This specifies which player this the manager for.
         [HideInInspector] public GameObject m_Instance;         // A reference to the instance of the tank when it is created.
       
