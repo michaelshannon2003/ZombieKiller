@@ -62,10 +62,7 @@ namespace Complete
 
             m_Dead = true;
             gameObject.SetActive(false);
-            if (OnHealthEventMessage != null)
-            {
-                OnHealthEventMessage("A death occured !!!");
-            }
+            EventManager.TriggerEvent("Message", "A death occured !!!");
 
         }
     }

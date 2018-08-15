@@ -7,8 +7,8 @@ namespace Complete
     public class PlayerShooting : MonoBehaviour
     {
         #region EventPublisher
-        public delegate void DisplayWeaponSwitch(string message);
-        public static event DisplayWeaponSwitch OnWeaponEventMessage;
+      //  public delegate void DisplayWeaponSwitch(string message);
+      //  public static event DisplayWeaponSwitch OnWeaponEventMessage;
         #endregion EventPublisher
 
 
@@ -67,9 +67,9 @@ namespace Complete
             {
                 currentWeapon++;
             }
-            if (OnWeaponEventMessage != null) {
-                OnWeaponEventMessage("Switched to " + weaponlist[currentWeapon].name);
-            }
+
+            EventManager.TriggerEvent("Message", "Switched to " + weaponlist[currentWeapon].name);
+            
         }
 
 
