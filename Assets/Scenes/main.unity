@@ -458,10 +458,6 @@ MonoBehaviour:
   m_zombies:
   - m_ZombieNumber: 0
     m_Instance: {fileID: 0}
-  - m_ZombieNumber: 0
-    m_Instance: {fileID: 0}
-  - m_ZombieNumber: 0
-    m_Instance: {fileID: 0}
   m_PlayerPrefab: {fileID: 1471003821209772, guid: 66be14debf7861e43bb127cf96af557e,
     type: 2}
   m_players:

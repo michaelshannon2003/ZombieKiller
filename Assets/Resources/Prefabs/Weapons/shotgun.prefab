@@ -128,6 +128,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_MinLaunchForce: 15
   fireRate: 0.5
+  ClipCapacity: 10
+  reloadSpeed: 1
 --- !u!135 &135298288603403480
 SphereCollider:
   m_ObjectHideFlags: 1
