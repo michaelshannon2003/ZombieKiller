@@ -69,7 +69,7 @@ namespace Complete
                 PlayerControl(false);
                 Canvas.ForceUpdateCanvases();
                 gameplay.text =  "Hey !!! " + PlayerNameScoreBoard.displayname + ",  You died";
-
+                EventManager.TriggerEvent("Message", "GameOver");
             }
 
         }
