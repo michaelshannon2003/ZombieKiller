@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
@@ -21,6 +23,9 @@ namespace Complete
         private List<GameObject> weaponlist;
         private int currentWeapon = 0;
         private Rigidbody m_Shell;                   // Prefab of the shell.
+
+        private bool firing = false;
+      
 
         private void OnEnable()
         {
@@ -48,9 +53,11 @@ namespace Complete
             {
                 Switchweapons();
             }
-            if (Input.GetButtonDown(m_FireButton))
+            if (Input.GetButtonDown(m_FireButton) && !firing)
             {
-                Fire();
+                firing = true;
+                 StartCoroutine(Fire()); 
+        
             }
         }
 
@@ -73,23 +80,30 @@ namespace Complete
         }
 
 
-        private void Fire()
+        private IEnumerator Fire()
         {
-
+            EventManager.TriggerEvent("Message", "Firing Weapon");
             //ScoreBoard.weapon = weaponlist[currentWeapon].name;
             // Set the fired flag so only Fire is only called once.
             var weapon = weaponlist[currentWeapon];
-            
+            var weaponstats = weapon.GetComponent<WeaponStats>();
             
             // Create an instance of the shell and store a reference to it's rigidbody.
+            ShootBullet(weapon.GetComponent<Rigidbody>(), weaponstats.m_MinLaunchForce);
+            yield return new WaitForSeconds(weaponstats.fireRate);
+            firing = false;          
+        }
+
+        private void ShootBullet(Rigidbody bullet, float launchForce)
+        {
             Rigidbody shellInstance =
-                Instantiate(weapon.GetComponent<Rigidbody>(), m_FireTransform.position, m_FireTransform.rotation) as Rigidbody;
+                Instantiate(bullet, m_FireTransform.position, m_FireTransform.rotation);
 
             // Set the shell's velocity to the launch force in the fire position's forward direction.
 
 
             // Set the shell's velocity to the launch force in the fire position's forward direction.
-            shellInstance.velocity = weapon.GetComponent<WeaponStats>().m_MinLaunchForce * m_FireTransform.forward;
+            shellInstance.velocity = launchForce * m_FireTransform.forward;
         }
     }
 }
