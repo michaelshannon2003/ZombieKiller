@@ -103,7 +103,7 @@ namespace Complete
             able_to_fire = false;
 
             Rigidbody shellInstance =
-                Instantiate(selectedWeapon.GetComponent<Rigidbody>(), m_FireTransform.position, m_FireTransform.rotation);           
+                Instantiate(selectedWeaponStats.ammunition.GetComponent<Rigidbody>(), m_FireTransform.position, m_FireTransform.rotation);           
             shellInstance.velocity = selectedWeaponStats.m_MinLaunchForce * m_FireTransform.forward;
 
             remainingbullets--;

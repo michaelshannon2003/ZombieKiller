@@ -8,5 +8,6 @@ namespace Complete
         public float fireRate;
         public int ClipCapacity = 1;
         public float reloadSpeed = 1;
+        public Transform ammunition;
     }
 }

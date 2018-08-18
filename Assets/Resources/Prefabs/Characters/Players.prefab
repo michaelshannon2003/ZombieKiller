@@ -308,7 +308,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PlayerNumber: 1
   m_FireTransform: {fileID: 4207822418803122}
-  m_MinLaunchForce: 30
 --- !u!114 &114598014659107652
 MonoBehaviour:
   m_ObjectHideFlags: 1
