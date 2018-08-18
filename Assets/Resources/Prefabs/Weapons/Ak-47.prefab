@@ -301,6 +301,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_MinLaunchForce: 30
   fireRate: 0.2
-  ClipCapacity: 30
+  ClipCapacity: 10
   reloadSpeed: 1
   ammunition: {fileID: 4965321861564952, guid: c363f710182045549afb238b2e249c43, type: 2}

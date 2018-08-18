@@ -21,7 +21,7 @@ namespace Complete
         [HideInInspector] public GameObject m_Instance;         // A reference to the instance of the tank when it is created.
         
         private PlayerMovement m_playerMovement;
-        private PlayerShooting m_playerShooting;
+        private Weapons m_Weapons;
         private GameObject m_CanvasGameObject;                  // Used to disable the world space UI during the Starting and Ending phases of each round.
 
 
@@ -30,10 +30,10 @@ namespace Complete
           //  m_CanvasGameObject = m_Instance.GetComponentInChildren<Canvas> ().gameObject;
          
             m_playerMovement = m_Instance.GetComponent<PlayerMovement>();
-            m_playerShooting = m_Instance.GetComponent<PlayerShooting>();
+            m_Weapons = m_Instance.GetComponent<Weapons>();
 
-            m_playerMovement.m_PlayerNumber = m_PlayerNumber;        
-            m_playerShooting.m_PlayerNumber = m_PlayerNumber;
+            m_playerMovement.m_PlayerNumber = m_PlayerNumber;
+            m_Weapons.m_PlayerNumber = m_PlayerNumber;
             
             // Get all of the renderers of the tank.
             MeshRenderer[] renderers = m_Instance.GetComponentsInChildren<MeshRenderer> ();
@@ -54,7 +54,7 @@ namespace Complete
         public void EnableControl(bool state)
         {
             m_playerMovement.enabled = state;
-            m_playerShooting.enabled = state;           
+            m_Weapons.enabled = state;           
         }
     }
 }
