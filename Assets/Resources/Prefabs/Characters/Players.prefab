@@ -306,8 +306,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: faaa5f8ceba7c9c4faf055f6e4359c98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SpawnLocation: {fileID: 4207822418803122}
   m_PlayerNumber: 1
-  m_FireTransform: {fileID: 4207822418803122}
 --- !u!114 &114598014659107652
 MonoBehaviour:
   m_ObjectHideFlags: 1

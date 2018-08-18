@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -12,12 +13,14 @@ namespace Complete
         //  public static event DisplayWeaponSwitch OnWeaponEventMessage;
         #endregion EventPublisher
 
+        public Transform SpawnLocation;
+
+
         public int m_PlayerNumber = 1;              // Used to identify the different players.
 
-        public Transform m_FireTransform;           // A child of the tank where the shells are spawned.
         private string m_FireButton;                // The input axis that is used for launching shells.
 
-       private List<GameObject> weaponlist;
+        private List<GameObject> weaponlist = new List<GameObject>();
         private int currentWeapon = 0;        
 
         private bool able_to_fire = true;
@@ -25,19 +28,24 @@ namespace Complete
         private WeaponStats selectedWeaponStats;
         private GameObject selectedWeapon;
 
+
         private void OnEnable()
         {          
         }
 
         private void Awake()
         {
-            weaponlist = Resources.LoadAll<GameObject>("Prefabs/Weapons").ToList();            
+            foreach(GameObject prefabweapon in Resources.LoadAll<GameObject>("Prefabs/Weapons")) {
+               GameObject weapon = Instantiate(prefabweapon, SpawnLocation.position, SpawnLocation.rotation);           
+                weaponlist.Add(weapon);
+                weapon.transform.parent = SpawnLocation.transform;
+            }
         }
 
         private void Start()
         {
             m_FireButton = "Fire" + m_PlayerNumber;
-            SelectedWeaponStats();
+            SetActiveCurrentWeapon();           
         }
 
         private void Update()
@@ -86,25 +94,29 @@ namespace Complete
             {
                 currentWeapon++;
             }
-            SelectedWeaponStats();
+            SetActiveCurrentWeapon();          
             EventManager.TriggerEvent("Message", "Switched to " + weaponlist[currentWeapon].name);
         }
 
-        private void SelectedWeaponStats()
+        private void SetActiveCurrentWeapon()
         {
             
+            foreach (var weapon in weaponlist) { weapon.SetActive(false); }
             selectedWeapon = weaponlist[currentWeapon];
+            selectedWeapon.SetActive(true);
             selectedWeaponStats = selectedWeapon.GetComponent<WeaponStats>();
             remainingbullets = selectedWeaponStats.ClipCapacity;
         }
+
           
         private IEnumerator ShootBullet()
         {
             able_to_fire = false;
 
+            var fireform = selectedWeapon.transform.Find("Bullet");
             Rigidbody shellInstance =
-                Instantiate(selectedWeaponStats.ammunition.GetComponent<Rigidbody>(), m_FireTransform.position, m_FireTransform.rotation);           
-            shellInstance.velocity = selectedWeaponStats.m_MinLaunchForce * m_FireTransform.forward;
+                Instantiate(selectedWeaponStats.ammunition.GetComponent<Rigidbody>(), fireform.position, fireform.rotation);           
+            shellInstance.velocity = selectedWeaponStats.m_MinLaunchForce * fireform.forward;
 
             remainingbullets--;
             EventManager.TriggerEvent("Message", string.Format("Firing Weapon. You have {0} bullets.", remainingbullets));
