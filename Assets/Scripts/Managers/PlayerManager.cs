@@ -34,7 +34,7 @@ namespace Complete
 
             m_playerMovement.m_PlayerNumber = m_PlayerNumber;
             m_Weapons.m_PlayerNumber = m_PlayerNumber;
-            
+
             // Get all of the renderers of the tank.
             MeshRenderer[] renderers = m_Instance.GetComponentsInChildren<MeshRenderer> ();
 

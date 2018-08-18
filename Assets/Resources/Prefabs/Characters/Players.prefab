@@ -58,7 +58,7 @@ GameObject:
   - component: {fileID: 54198473892157138}
   - component: {fileID: 114598014659107652}
   - component: {fileID: 114197159561977008}
-  - component: {fileID: 114450317890649420}
+  - component: {fileID: 114045881398929550}
   m_Layer: 0
   m_Name: Players
   m_TagString: Player
@@ -280,6 +280,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 84
   m_CollisionDetection: 0
+--- !u!114 &114045881398929550
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1471003821209772}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: faaa5f8ceba7c9c4faf055f6e4359c98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpawnLocation: {fileID: 4207822418803122}
+  m_PlayerNumber: 1
 --- !u!114 &114197159561977008
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -295,19 +308,6 @@ MonoBehaviour:
   m_ZeroHealthColor: {r: 1, g: 0, b: 0, a: 1}
   m_StartingHealth: 100
   m_Dead: 0
---- !u!114 &114450317890649420
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1471003821209772}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: faaa5f8ceba7c9c4faf055f6e4359c98, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SpawnLocation: {fileID: 4207822418803122}
-  m_PlayerNumber: 1
 --- !u!114 &114598014659107652
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -62,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Camera\CameraControl.cs" />
+    <Compile Include="Assets\Scripts\Camera\MultipleDisplays.cs" />
     <Compile Include="Assets\Scripts\Character\Health.cs" />
     <Compile Include="Assets\Scripts\Managers\DisplayEventController.cs" />
     <Compile Include="Assets\Scripts\Managers\EventManager.cs" />
