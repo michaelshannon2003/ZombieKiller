@@ -176,6 +176,8 @@ namespace Complete
         // This is used to check if there is one or fewer tanks remaining and thus the round should end.
         private bool ZombiesRemain()
         {
+
+            Debug.Log("Checking if zombies remain");
             if (m_zombies.Any(zombie => zombie.m_Instance.GetComponent<Health>().m_Dead == false))
             { return true; }
             else
