@@ -452,8 +452,8 @@ MonoBehaviour:
   waves:
   - rate: 1
     zombies:
-    - count: 2
-      m_ZombieRehab: {fileID: 1979992185661690, guid: ba3c66eb7202c8e4e8738a2c2f79d918,
+    - count: 1
+      m_ZombieRehab: {fileID: 1586688700593384, guid: 6023e9376f55e15458a31d735e0eb02c,
         type: 2}
   - rate: 2
     zombies:
