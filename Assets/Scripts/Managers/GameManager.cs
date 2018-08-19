@@ -12,13 +12,20 @@ namespace Complete
     {
         public enum SpawnState { SPAWNING, WAITING, COUNTING };
 
+        [System.Serializable]
+        public class Zombie
+        {
+            public int count;
+            public GameObject m_ZombieRehab;
 
+        }
 
         [System.Serializable]
         public class Wave
         {
-            public int count;
+            
             public float rate;
+            public Zombie[] zombies;
         }
 
         public Wave[] waves;
@@ -37,8 +44,7 @@ namespace Complete
 
         private List<ZombieManager> m_zombies = new List<ZombieManager>();               // A collection of managers for enabling and disabling different aspects of the tanks.
         public GameObject m_PlayerPrefab;             // Reference to the prefab the players will control.
-
-        public GameObject m_ZombieRehab;             // Reference to the prefab the players will control.
+               
         public PlayerManager[] m_players;               // A collection of managers for enabling and disabling different aspects of the tanks.
 
 
@@ -103,22 +109,21 @@ namespace Complete
         }
 
 
-        private void SpawnZombies(int no_of_zombies)
+        private void SpawnZombies(Zombie zombies)
         {
 
-            for (int i = 0; i < no_of_zombies; i++)
+            for (int i = 0; i < zombies.count; i++)
             {
                 float x = UnityEngine.Random.Range(-15, 15);
                 float z = UnityEngine.Random.Range(-15, 15);
                 Vector3 initial_location = new Vector3(x, 1, z);
                 ZombieManager zombie = new ZombieManager()
                 {
-                    m_Instance = Instantiate(m_ZombieRehab, initial_location, new Quaternion(0, 0, 0, 0)) as GameObject,
+                    m_Instance = Instantiate(zombies.m_ZombieRehab, initial_location, new Quaternion(0, 0, 0, 0)) as GameObject,
                     m_ZombieNumber = i + 1,
                 };
 
                 zombie.Setup();
-
                 m_zombies.Add(zombie);
 
             }
@@ -143,7 +148,9 @@ namespace Complete
         IEnumerator SpawnWave(Wave _wave)
         {
             state = SpawnState.SPAWNING;
-            SpawnZombies(_wave.count);
+            foreach (Zombie zombie in _wave.zombies) {
+                SpawnZombies(zombie);
+            }
             yield return new WaitForSeconds(1f / _wave.rate);
             state = SpawnState.WAITING;
         }
@@ -191,8 +198,6 @@ namespace Complete
             }
         }
 
-
-
         // This function is to find out if there is a winner of the round.
         // This function is called with the assumption that 1 or fewer tanks are currently active.
 
@@ -232,4 +237,6 @@ namespace Complete
         }
 
     }
+
+
 }

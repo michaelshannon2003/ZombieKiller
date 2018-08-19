@@ -450,14 +450,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waves:
-  - count: 1
-    rate: 1
-  - count: 3
-    rate: 2
+  - rate: 1
+    zombies:
+    - count: 2
+      m_ZombieRehab: {fileID: 1979992185661690, guid: ba3c66eb7202c8e4e8738a2c2f79d918,
+        type: 2}
+  - rate: 2
+    zombies:
+    - count: 1
+      m_ZombieRehab: {fileID: 1979992185661690, guid: 4133231d2f0b0f648867ec06b7acfcf3,
+        type: 2}
+    - count: 2
+      m_ZombieRehab: {fileID: 1979992185661690, guid: ba3c66eb7202c8e4e8738a2c2f79d918,
+        type: 2}
   timeBetweenWaves: 2
   m_PlayerPrefab: {fileID: 1471003821209772, guid: 66be14debf7861e43bb127cf96af557e,
-    type: 2}
-  m_ZombieRehab: {fileID: 1979992185661690, guid: ba3c66eb7202c8e4e8738a2c2f79d918,
     type: 2}
   m_players:
   - m_PlayerColor: {r: 0.08235294, g: 0.08235294, b: 0.08235294, a: 0}
