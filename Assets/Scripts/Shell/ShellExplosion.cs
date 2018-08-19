@@ -18,7 +18,6 @@ namespace Complete
 
             if (!other.CompareTag(tag))
             {
-                Debug.Log("Hitting for " + other.gameObject.name + " for damage");
                 other.GetComponentInParent<Health>().TakeDamage(m_damagetaken);
             }
 
