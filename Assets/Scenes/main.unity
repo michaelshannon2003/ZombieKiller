@@ -449,16 +449,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54a000792783c934885973b761b3f96f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NumRoundsToWin: 2
-  m_StartDelay: 3
-  m_EndDelay: 3
-  m_CameraControl: {fileID: 0}
-  m_ZombieRehab: {fileID: 1979992185661690, guid: ba3c66eb7202c8e4e8738a2c2f79d918,
-    type: 2}
-  m_zombies:
-  - m_ZombieNumber: 0
-    m_Instance: {fileID: 0}
+  waves:
+  - count: 1
+    rate: 1
+  - count: 3
+    rate: 2
+  timeBetweenWaves: 2
   m_PlayerPrefab: {fileID: 1471003821209772, guid: 66be14debf7861e43bb127cf96af557e,
+    type: 2}
+  m_ZombieRehab: {fileID: 1979992185661690, guid: ba3c66eb7202c8e4e8738a2c2f79d918,
     type: 2}
   m_players:
   - m_PlayerColor: {r: 0.08235294, g: 0.08235294, b: 0.08235294, a: 0}
