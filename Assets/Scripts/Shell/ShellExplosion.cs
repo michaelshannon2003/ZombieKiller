@@ -16,13 +16,13 @@ namespace Complete
         private void OnTriggerEnter(Collider other)
         {
 
-            if (!other.CompareTag(tag))
+            if (!other.CompareTag(tag) && other.gameObject.layer != LayerMask.NameToLayer("Environment"))
             {
                 other.GetComponentInParent<Health>().TakeDamage(m_damagetaken);
             }
 
-            Destroy(gameObject);
-
+                Destroy(gameObject);
+         
         }
 
 
