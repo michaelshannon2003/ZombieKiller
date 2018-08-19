@@ -22,6 +22,9 @@ GameObject:
   - component: {fileID: 193242066346997200}
   - component: {fileID: 33387470248484634}
   - component: {fileID: 23804872545888042}
+  - component: {fileID: 54758812019328940}
+  - component: {fileID: 64880957479793858}
+  - component: {fileID: 136764214721851418}
   m_Layer: 8
   m_Name: Tree 1
   m_TagString: Untagged
@@ -61,15 +64,15 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BumpSpecMap:
-        m_Texture: {fileID: 2800000, guid: 1af0fca9a2b2be2489e65bbf9cfcc5c3, type: 3}
+        m_Texture: {fileID: 2800000, guid: 8d78fc297288bcb42b3081d27601d1a1, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 7ebf5a7f1d8a42b46a334a95820fcfce, type: 3}
+        m_Texture: {fileID: 2800000, guid: 87d7b037dfaa4334585461cd9a3ec17b, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _TranslucencyMap:
-        m_Texture: {fileID: 2800000, guid: 4bf351407c21a6745901a9a86cc6dcb2, type: 3}
+        m_Texture: {fileID: 2800000, guid: 27dfdbf14a3b5bb4cb4fb4cdb7855919, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
@@ -99,19 +102,19 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BumpSpecMap:
-        m_Texture: {fileID: 2800000, guid: 1af0fca9a2b2be2489e65bbf9cfcc5c3, type: 3}
+        m_Texture: {fileID: 2800000, guid: 8d78fc297288bcb42b3081d27601d1a1, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 7ebf5a7f1d8a42b46a334a95820fcfce, type: 3}
+        m_Texture: {fileID: 2800000, guid: 87d7b037dfaa4334585461cd9a3ec17b, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ShadowTex:
-        m_Texture: {fileID: 2800000, guid: 4c994b0c8a13517459cefeefec7d34d4, type: 3}
+        m_Texture: {fileID: 2800000, guid: 764e1e162d825f849b54cad55d4e0834, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _TranslucencyMap:
-        m_Texture: {fileID: 2800000, guid: 4bf351407c21a6745901a9a86cc6dcb2, type: 3}
+        m_Texture: {fileID: 2800000, guid: 27dfdbf14a3b5bb4cb4fb4cdb7855919, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
@@ -333,6 +336,35 @@ Mesh:
   m_MeshMetrics[0]: 1
   m_MeshMetrics[1]: 1
   m_MeshOptimized: 0
+--- !u!54 &54758812019328940
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1390493942763206}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &64880957479793858
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1390493942763206}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 43556351254286972}
 --- !u!114 &114848021961333762
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -345,7 +377,7 @@ MonoBehaviour:
   m_Name: Tree Data
   m_EditorClassIdentifier: 
   _uniqueID: 508
-  materialHash: be81e65160c28d7d9a60c1cd5e2050a2215482368
+  materialHash: 595bcb478a608f79582fff14255b09d3215482368
   root:
     _uniqueID: 1
     seed: 1234
@@ -444,7 +476,7 @@ MonoBehaviour:
     enableAmbientOcclusion: 1
     enableMaterialOptimize: 1
     aoDensity: 1
-    rootSpread: 2.32
+    rootSpread: 0.37
     groundOffset: 0
     rootMatrix:
       e00: 1
@@ -1289,7 +1321,7 @@ MonoBehaviour:
     vertEnd: 0
     capRange: 0
     breakOffset: 1
-    size: 2.32
+    size: 0.37
     scale: 1
     offset: 0
     baseAngle: 0
@@ -21674,6 +21706,19 @@ MonoBehaviour:
   optimizedSolidMaterial: {fileID: 21357169283630726}
   optimizedCutoutMaterial: {fileID: 21549832669084016}
   isInPreviewMode: 0
+--- !u!136 &136764214721851418
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1390493942763206}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 2
+  m_Height: 20
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!193 &193242066346997200
 Tree:
   m_ObjectHideFlags: 1

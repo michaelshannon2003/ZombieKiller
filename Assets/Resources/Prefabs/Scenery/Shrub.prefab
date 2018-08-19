@@ -9,32 +9,34 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1967556486722960}
+  m_RootGameObject: {fileID: 1303919950665994}
   m_IsPrefabAsset: 1
---- !u!1 &1967556486722960
+--- !u!1 &1303919950665994
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4344597460472956}
-  - component: {fileID: 193453826353098934}
-  - component: {fileID: 33171675815609478}
-  - component: {fileID: 23917015603208620}
-  m_Layer: 0
-  m_Name: Tree
+  - component: {fileID: 4304045554961348}
+  - component: {fileID: 193649965658191268}
+  - component: {fileID: 33477781461354622}
+  - component: {fileID: 23163138338148798}
+  - component: {fileID: 54529900793609180}
+  - component: {fileID: 65994718029040996}
+  m_Layer: 8
+  m_Name: Shrub
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4344597460472956
+--- !u!4 &4304045554961348
 Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1967556486722960}
+  m_GameObject: {fileID: 1303919950665994}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -42,12 +44,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &23917015603208620
+--- !u!23 &23163138338148798
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1967556486722960}
+  m_GameObject: {fileID: 1303919950665994}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -56,7 +58,9 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
-  m_Materials: []
+  m_Materials:
+  - {fileID: 21781086030633016, guid: 956c1cb3f48235e43ac9020046100eef, type: 2}
+  - {fileID: 21495134386463392, guid: 956c1cb3f48235e43ac9020046100eef, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -76,19 +80,46 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!33 &33171675815609478
+--- !u!33 &33477781461354622
 MeshFilter:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1967556486722960}
-  m_Mesh: {fileID: 43516222873323284, guid: 6cd23bc25153ded43939e353fd70c685, type: 2}
---- !u!193 &193453826353098934
+  m_GameObject: {fileID: 1303919950665994}
+  m_Mesh: {fileID: 43901732978531440, guid: 956c1cb3f48235e43ac9020046100eef, type: 2}
+--- !u!54 &54529900793609180
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1303919950665994}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &65994718029040996
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1303919950665994}
+  m_Material: {fileID: 13400000, guid: d586aa3c175205b4a9d9d8b9c8052abf, type: 2}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 6.8373346, y: 14.441415, z: 6.484228}
+  m_Center: {x: 0.18656218, y: 4.923573, z: 0.40186465}
+--- !u!193 &193649965658191268
 Tree:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1967556486722960}
+  m_GameObject: {fileID: 1303919950665994}
   m_SpeedTreeWindAsset: {fileID: 0}
-  m_TreeData: {fileID: 114788717712612914, guid: 6cd23bc25153ded43939e353fd70c685,
+  m_TreeData: {fileID: 114803000503251370, guid: 956c1cb3f48235e43ac9020046100eef,
     type: 2}

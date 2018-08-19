@@ -114,8 +114,8 @@ namespace Complete
 
             for (int i = 0; i < zombies.count; i++)
             {
-                float x = UnityEngine.Random.Range(-15, 15);
-                float z = UnityEngine.Random.Range(-15, 15);
+                float x = UnityEngine.Random.Range(36, 450);
+                float z = UnityEngine.Random.Range(36, 450);
                 Vector3 initial_location = new Vector3(x, 1, z);
                 ZombieManager zombie = new ZombieManager()
                 {
@@ -177,7 +177,6 @@ namespace Complete
         private bool ZombiesRemain()
         {
 
-            Debug.Log("Checking if zombies remain");
             if (m_zombies.Any(zombie => zombie.m_Instance.GetComponent<Health>().m_Dead == false))
             { return true; }
             else

@@ -18,7 +18,13 @@ namespace Complete
 
             if (!other.CompareTag(tag) && other.gameObject.layer != LayerMask.NameToLayer("Environment"))
             {
-                other.GetComponentInParent<Health>().TakeDamage(m_damagetaken);
+
+                Health opponentheath = other.GetComponentInParent<Health>();
+
+                if (opponentheath == null) { Debug.Log(other.name); }
+                else { opponentheath.GetComponentInParent<Health>().TakeDamage(m_damagetaken); }
+                
+                
             }
 
                 Destroy(gameObject);
