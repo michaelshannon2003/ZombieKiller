@@ -21,12 +21,12 @@ GameObject:
   - component: {fileID: 4969679031696106}
   - component: {fileID: 33103390222144618}
   - component: {fileID: 23184170723309278}
-  - component: {fileID: 136105053472833652}
   - component: {fileID: 54126644946237516}
   - component: {fileID: 114092386766471396}
   - component: {fileID: 114356890389753490}
   - component: {fileID: 114299083230280430}
   - component: {fileID: 114097177871539470}
+  - component: {fileID: 64674632211793410}
   m_Layer: 0
   m_Name: ShootingZombie
   m_TagString: Zombies
@@ -132,7 +132,21 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
+--- !u!64 &64674632211793410
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1586688700593384}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!114 &114092386766471396
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -186,16 +200,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_damagetaken: 100
---- !u!136 &136105053472833652
-CapsuleCollider:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1586688700593384}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}

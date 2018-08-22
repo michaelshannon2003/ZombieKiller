@@ -15,6 +15,8 @@ namespace Complete
 
         private void OnTriggerEnter(Collider other)
         {
+            Debug.Log(tag + " hit" + other.tag + " in layer " + other.gameObject.layer);
+            
 
             if (!other.CompareTag(tag) && other.gameObject.layer != LayerMask.NameToLayer("Environment"))
             {

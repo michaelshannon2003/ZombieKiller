@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4207822418803122}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: FireLocation
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -37,7 +37,7 @@ GameObject:
   - component: {fileID: 33185955153270674}
   - component: {fileID: 23618450469693626}
   - component: {fileID: 135201013296412014}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sphere
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -54,12 +54,13 @@ GameObject:
   - component: {fileID: 4011402370406684}
   - component: {fileID: 33798826426998832}
   - component: {fileID: 23217313355235156}
-  - component: {fileID: 136838924413633762}
   - component: {fileID: 54198473892157138}
   - component: {fileID: 114598014659107652}
   - component: {fileID: 114197159561977008}
   - component: {fileID: 114045881398929550}
-  m_Layer: 0
+  - component: {fileID: 136375607879282024}
+  - component: {fileID: 143542568232740840}
+  m_Layer: 9
   m_Name: Players
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -77,7 +78,7 @@ GameObject:
   - component: {fileID: 33750326887703940}
   - component: {fileID: 23522014238045854}
   - component: {fileID: 136324387471266390}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cylinder
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -94,7 +95,7 @@ GameObject:
   - component: {fileID: 4462728122054264}
   - component: {fileID: 20514747648415644}
   - component: {fileID: 81821284773204576}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -350,7 +351,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 116
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!81 &81821284773204576
 AudioListener:
   m_ObjectHideFlags: 1
@@ -398,8 +399,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_PlayerNumber: 1
-  m_Speed: 12
-  m_TurnSpeed: 180
+  m_Speed: 15
+  rotateSpeed: 5
 --- !u!135 &135201013296412014
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -425,16 +426,33 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
---- !u!136 &136838924413633762
+--- !u!136 &136375607879282024
 CapsuleCollider:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1471003821209772}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: d586aa3c175205b4a9d9d8b9c8052abf, type: 2}
   m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5
-  m_Height: 2
+  m_Height: 1
   m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!143 &143542568232740840
+CharacterController:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1471003821209772}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 1
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0
   m_Center: {x: 0, y: 0, z: 0}
