@@ -386,6 +386,8 @@ MonoBehaviour:
   m_FullHealthColor: {r: 0, g: 1, b: 0, a: 1}
   m_ZeroHealthColor: {r: 1, g: 0, b: 0, a: 1}
   m_StartingHealth: 100
+  damageaffect: {fileID: 0}
+  deathaffect: {fileID: 0}
   m_Dead: 0
 --- !u!114 &114598014659107652
 MonoBehaviour:
