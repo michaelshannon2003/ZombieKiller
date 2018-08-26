@@ -44,11 +44,13 @@ namespace Complete
         public GameObject m_PlayerPrefab;             // Reference to the prefab the players will control.
         public GameObject map;
 
-        
+
         public GameObject gameOverPanel;
         public Text gameplay;
 
         Bounds mapSize;
+        PlayerManager player;
+
 
 
         private void Awake()
@@ -56,55 +58,54 @@ namespace Complete
             mapSize = map.GetComponent<Renderer>().bounds;
         }
 
-            private void Start()
+        private void Start()
         {
             gameOverPanel.SetActive(false);
 
+
             SpawnAllPlayers();
+
+            player = FindObjectOfType<PlayerManager>();
+            player.OnDeath += OnGameOver;
         }
 
         void Update()
         {
 
-            if (PlayersRemain())
+            if (state == SpawnState.WAITING)
             {
-
-                if (state == SpawnState.WAITING)
+                if (!ZombiesRemain())
                 {
-                    if (!ZombiesRemain())
-                    {
-                        WaveCompleted();
-                    }
-
+                    WaveCompleted();
                 }
-                else
-                {
 
-                    if (waveCountdown <= 0)
-                    {
-                        if (state != SpawnState.SPAWNING)
-                        {
-                            gameplay.text = "";
-                            StartCoroutine(SpawnWave(waves[nextWave]));
-                        }
-                    }
-                    else
-                    {
-                        waveCountdown -= Time.deltaTime;
-
-                    }
-                }
             }
             else
             {
 
-                gameOverPanel.SetActive(true);
-      
+                if (waveCountdown <= 0)
+                {
+                    if (state != SpawnState.SPAWNING)
+                    {
+                        gameplay.text = "";
+                        StartCoroutine(SpawnWave(waves[nextWave]));
+                    }
+                }
+                else
+                {
+                    waveCountdown -= Time.deltaTime;
 
-                gameplay.text = "Hey !!! " + PlayerNameScoreBoard.displayname + ",  You died";
-                EventManager.TriggerEvent("Message", "GameOver");
+                }
             }
 
+        }
+
+        void OnGameOver()
+        {
+            gameOverPanel.SetActive(true);
+
+            gameplay.text = "Hey !!! " + PlayerNameScoreBoard.displayname + ",  You died";
+            EventManager.TriggerEvent("Message", "GameOver");
         }
 
 
@@ -122,8 +123,9 @@ namespace Complete
             Instantiate(m_PlayerPrefab, GetRandomSpawnLocation(), new Quaternion(0, 0, 0, 0));
         }
 
-        private Vector3 GetRandomSpawnLocation() {
-             
+        private Vector3 GetRandomSpawnLocation()
+        {
+
             float xbounds = UnityEngine.Random.Range((mapSize.size.x / 2) * -1, (mapSize.size.x / 2));
             float zbounds = UnityEngine.Random.Range((mapSize.size.z / 2) * -1, (mapSize.size.z / 2));
             return new Vector3(xbounds, 1, zbounds);
@@ -172,16 +174,6 @@ namespace Complete
             }
         }
 
-        private bool PlayersRemain()
-        {
-            if (FindObjectOfType<PlayerManager>() != null)
-            { return true; }
-            else
-            {
-                return false;
-            }
-        }
-         
     }
 
 
