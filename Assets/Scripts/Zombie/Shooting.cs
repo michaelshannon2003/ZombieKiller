@@ -18,12 +18,16 @@ public class Shooting : MonoBehaviour
 
     public void Update()
     {
-        var distance = Vector3.Distance(player.transform.position, transform.position);
 
-        if (distance >= minimumDistanceFromPlayer && (Time.time - shotTime) > shotInterval)
+        if (player != null)
         {
-            LookAtTarget();
-            Shoot();            
+            var distance = Vector3.Distance(player.transform.position, transform.position);
+
+            if (distance >= minimumDistanceFromPlayer && (Time.time - shotTime) > shotInterval)
+            {
+                LookAtTarget();
+                Shoot();
+            }
         }
     }
 

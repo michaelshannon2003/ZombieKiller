@@ -23,7 +23,7 @@ namespace Complete
         [System.Serializable]
         public class Wave
         {
-            
+
             public float rate;
             public Zombie[] zombies;
         }
@@ -39,13 +39,13 @@ namespace Complete
         private int nextWave = 0;
         private int totalwavescompleted;
         public float timeBetweenWaves = 5f;
-        private float waveCountdown;      
+        private float waveCountdown;
 
 
-        private List<ZombieManager> m_zombies = new List<ZombieManager>();               // A collection of managers for enabling and disabling different aspects of the tanks.
+        private List<ZombieManager> m_zombies = new List<ZombieManager>();               // A collection of managers for enabling and disabling different aspects of the tanks.        
         public GameObject m_PlayerPrefab;             // Reference to the prefab the players will control.
-               
-        public PlayerManager[] m_players;               // A collection of managers for enabling and disabling different aspects of the tanks.
+
+        private List<PlayerManager> m_players = new List<PlayerManager>();               // A collection of managers for enabling and disabling different aspects of the tanks.
 
 
         public GameObject gameOverPanel;
@@ -68,7 +68,7 @@ namespace Complete
 
             if (PlayersRemain())
             {
-            
+
                 if (state == SpawnState.WAITING)
                 {
                     if (!ZombiesRemain())
@@ -91,7 +91,7 @@ namespace Complete
                     else
                     {
                         waveCountdown -= Time.deltaTime;
-                    
+
                     }
                 }
             }
@@ -99,8 +99,7 @@ namespace Complete
             {
 
                 gameOverPanel.SetActive(true);
-                DestroyZombies();
-                PlayerControl(false);
+                DestroyZombies();              
 
                 gameplay.text = "Hey !!! " + PlayerNameScoreBoard.displayname + ",  You died";
                 EventManager.TriggerEvent("Message", "GameOver");
@@ -123,7 +122,6 @@ namespace Complete
                     m_ZombieNumber = i + 1,
                 };
 
-                zombie.Setup();
                 m_zombies.Add(zombie);
 
             }
@@ -131,15 +129,20 @@ namespace Complete
 
         private void SpawnAllPlayers()
         {
-            // For all the tanks...
-            for (int i = 0; i < m_players.Length; i++)
+
+            float x = UnityEngine.Random.Range(36, 450);
+            float z = UnityEngine.Random.Range(36, 450);
+            Vector3 initial_location = new Vector3(x, 1, z);
+
+            PlayerManager player = new PlayerManager()
             {
-                // ... create them, set their player number and references needed for control.
-                m_players[i].m_Instance =
-                    Instantiate(m_PlayerPrefab, m_players[i].m_SpawnPoint.position, m_players[i].m_SpawnPoint.rotation) as GameObject;
-                m_players[i].m_PlayerNumber = i + 1;
-                m_players[i].Setup();
-            }
+                m_Instance =
+                    Instantiate(m_PlayerPrefab, initial_location, new Quaternion(0, 0, 0, 0)) as GameObject,
+                m_PlayerNumber = 1,
+            };
+
+            m_players.Add(player);
+
         }
 
         // This is called from start and will run each phase of the game one after another.
@@ -148,7 +151,8 @@ namespace Complete
         IEnumerator SpawnWave(Wave _wave)
         {
             state = SpawnState.SPAWNING;
-            foreach (Zombie zombie in _wave.zombies) {
+            foreach (Zombie zombie in _wave.zombies)
+            {
                 SpawnZombies(zombie);
             }
             yield return new WaitForSeconds(1f / _wave.rate);
@@ -167,46 +171,35 @@ namespace Complete
             totalwavescompleted++;
 
             gameplay.text = "Wave" + totalwavescompleted + " Completed!";
-            if (nextWave == waves.Count()) {
+            if (nextWave == waves.Count())
+            {
                 nextWave = 0;
-                    }
+            }
         }
 
 
         // This is used to check if there is one or fewer tanks remaining and thus the round should end.
         private bool ZombiesRemain()
         {
-
-            if (m_zombies.Any(zombie => zombie.m_Instance.GetComponent<Health>().m_Dead == false))
+            if (FindObjectOfType<ZombieManager>() != null)
             { return true; }
             else
             {
                 return false;
             }
-
         }
 
         private bool PlayersRemain()
         {
-
-            if (m_players.Any(player => player.m_Instance.GetComponent<Health>().m_Dead == false))
+            Debug.Log("PlayersRemain");
+            if (FindObjectOfType<PlayerManager>() != null)
             { return true; }
             else
             {
                 return false;
             }
         }
-
-        // This function is to find out if there is a winner of the round.
-        // This function is called with the assumption that 1 or fewer tanks are currently active.
-
-        private void PlayerControl(bool state)
-        {
-            foreach (PlayerManager player in m_players)
-            {
-                player.EnableControl(state);
-            }
-        }
+       
 
         private void ZombieControl(bool state)
         {
@@ -239,3 +232,4 @@ namespace Complete
 
 
 }
+

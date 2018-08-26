@@ -15,10 +15,31 @@ namespace Complete
 
         private void OnTriggerEnter (Collider other)
         {
-            if (other.CompareTag("Player"))
+            if (!other.CompareTag(tag) && other.gameObject.layer != LayerMask.NameToLayer("Environment"))
             {
-               other.GetComponentInParent<Health>().TakeDamage(m_damagetaken);
-            }                
+                OnHitObject(other);
+            }
+           
+
         }
+
+
+        void OnHitObject(Collider c)
+        {
+
+            Debug.Log("Hitting " + c.name);
+            IDamagable damageableObject = c.GetComponent<IDamagable>();
+            if (damageableObject != null)
+            {
+
+                Debug.Log("Taking damage " + c.name);
+                damageableObject.TakeDamage(m_damagetaken);
+            }
+            else
+            {
+                Debug.Log("NO Idaamagel");
+            }
+        }
+
     }
 }

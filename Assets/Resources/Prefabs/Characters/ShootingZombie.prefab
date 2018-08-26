@@ -24,9 +24,9 @@ GameObject:
   - component: {fileID: 54126644946237516}
   - component: {fileID: 114092386766471396}
   - component: {fileID: 114356890389753490}
-  - component: {fileID: 114299083230280430}
   - component: {fileID: 114097177871539470}
   - component: {fileID: 64674632211793410}
+  - component: {fileID: 114884780595958626}
   - component: {fileID: 82977842950397444}
   m_Layer: 0
   m_Name: ShootingZombie
@@ -269,25 +269,6 @@ MonoBehaviour:
   ammunition: {fileID: 4247983495161016, guid: f1e479e8bc49cf9479b5f32581fb046d, type: 2}
   minimumDistanceFromPlayer: 15
   shotInterval: 2
---- !u!114 &114299083230280430
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1586688700593384}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 906369046bcbc024ba7acd2712365e65, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_FullHealthColor: {r: 0, g: 1, b: 0, a: 1}
-  m_ZeroHealthColor: {r: 1, g: 0, b: 0, a: 1}
-  m_StartingHealth: 100
-  damageEffect: {fileID: 198000014159833656, guid: a3768c8a9d1b90d4bb0eb0e4bdbe730c,
-    type: 2}
-  deathEffect: {fileID: 198000012777718758, guid: acf39d9f4addf294d93fa56fa373961b,
-    type: 2}
-  m_Dead: 0
 --- !u!114 &114356890389753490
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -300,3 +281,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_damagetaken: 100
+--- !u!114 &114884780595958626
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1586688700593384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edb8cdb8b19a50648b1ef1fb26a74db4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingHealth: 100
+  m_ZombieNumber: 0
+  m_Instance: {fileID: 0}

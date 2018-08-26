@@ -5,18 +5,14 @@ using UnityEngine;
 namespace Complete
 {
     [Serializable]
-    public class ZombieManager
+    public class ZombieManager :  LivingEntity
     {
      
 
         [HideInInspector] public int m_ZombieNumber;            // This specifies which player this the manager for.
         [HideInInspector] public GameObject m_Instance;         // A reference to the instance of the tank when it is created.
-      
-        
-        //  private GameObject m_CanvasGameObject;                  // Used to disable the world space UI during the Starting and Ending phases of each round.
 
-
-        public void Setup ()
+        public void OnStart ()
         {
 
             // Go through all the renderers...
@@ -36,8 +32,18 @@ namespace Complete
             m_Instance.SetActive (state);
         }
 
+        public override void TakeDamage(float damage)
+        {
+
+            Debug.Log("Zombie takes damage " + damage);
+            if (damage >= health)
+            {
+            //    Destroy(Instantiate(deathEffect.gameObject, hitPoint, Quaternion.FromToRotation(Vector3.forward, hitDirection)) as GameObject, deathEffect.startLifetime);
+            }
+            base.TakeDamage(damage);
+        }
 
 
-      
+
     }
 }

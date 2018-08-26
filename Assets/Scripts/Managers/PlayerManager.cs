@@ -4,14 +4,8 @@ using UnityEngine;
 namespace Complete
 {
     [Serializable]
-    public class PlayerManager
+    public class PlayerManager : LivingEntity
     {
-
-
-        // This class is to manage various settings on a tank.
-        // It works with the GameManager class to control how the tanks behave
-        // and whether or not players have control of their tank in the 
-        // different phases of the game.
         public delegate void SendMessage(string message);
         public static event SendMessage OnWeaponSwitch;
 
@@ -48,11 +42,6 @@ namespace Complete
         }
 
       
-
-        public void EnableControl(bool state)
-        {
-            m_playerMovement.enabled = state;
-            m_Weapons.enabled = state;           
-        }
+      
     }
 }

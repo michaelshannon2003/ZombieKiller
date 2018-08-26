@@ -74,6 +74,8 @@
     <Compile Include="Assets\Scripts\Managers\DisplayEventController.cs" />
     <Compile Include="Assets\Scripts\Managers\EventManager.cs" />
     <Compile Include="Assets\Scripts\Managers\GameManager.cs" />
+    <Compile Include="Assets\Scripts\Managers\IDamagable.cs" />
+    <Compile Include="Assets\Scripts\Managers\LivingEntity.cs" />
     <Compile Include="Assets\Scripts\Managers\PlayerManager.cs" />
     <Compile Include="Assets\Scripts\Managers\ZombieManager.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerMovement.cs" />
@@ -81,6 +83,7 @@
     <Compile Include="Assets\Scripts\Player\Weapons.cs" />
     <Compile Include="Assets\Scripts\RestartGame.cs" />
     <Compile Include="Assets\Scripts\ScoreBoard\PlayerNameScoreBoard.cs" />
+    <Compile Include="Assets\Scripts\Shell\IDamageable.cs" />
     <Compile Include="Assets\Scripts\Shell\ShellExplosion.cs" />
     <Compile Include="Assets\Scripts\Shell\WeaponStats.cs" />
     <Compile Include="Assets\Scripts\Tank\TankHealth.cs" />
