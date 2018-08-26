@@ -73,10 +73,12 @@
     <Compile Include="Assets\Scripts\Character\IDamagable.cs" />
     <Compile Include="Assets\Scripts\Character\LivingEntity.cs" />
     <Compile Include="Assets\Scripts\Character\MovementController.cs" />
+    <Compile Include="Assets\Scripts\Managers\AudioManager.cs" />
     <Compile Include="Assets\Scripts\Managers\DisplayEventController.cs" />
     <Compile Include="Assets\Scripts\Managers\EventManager.cs" />
     <Compile Include="Assets\Scripts\Managers\GameManager.cs" />
     <Compile Include="Assets\Scripts\Managers\PlayerManager.cs" />
+    <Compile Include="Assets\Scripts\Managers\SoundLibrary.cs" />
     <Compile Include="Assets\Scripts\Managers\ZombieManager.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\Player\ScoreBoard.cs" />
@@ -85,9 +87,6 @@
     <Compile Include="Assets\Scripts\ScoreBoard\PlayerNameScoreBoard.cs" />
     <Compile Include="Assets\Scripts\Shell\ShellExplosion.cs" />
     <Compile Include="Assets\Scripts\Shell\WeaponStats.cs" />
-    <Compile Include="Assets\Scripts\Tank\TankHealth.cs" />
-    <Compile Include="Assets\Scripts\Tank\TankMovement.cs" />
-    <Compile Include="Assets\Scripts\Tank\TankShooting.cs" />
     <Compile Include="Assets\Scripts\UI\UIDirectionControl.cs" />
     <Compile Include="Assets\Scripts\Zombie\Shooting.cs" />
     <Compile Include="Assets\Scripts\Zombie\ZombieAttack.cs" />

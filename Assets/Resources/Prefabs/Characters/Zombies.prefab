@@ -115,6 +115,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingHealth: 100
+  deathEffect: {fileID: 198000014159833656, guid: a3768c8a9d1b90d4bb0eb0e4bdbe730c,
+    type: 2}
+  damageEffect: {fileID: 198000010585806678, guid: 96730f8640590934eacb6f860058e7f9,
+    type: 2}
+  deathSound: {fileID: 8300000, guid: cd8ca3b7804724bdeac39433cf57cacd, type: 3}
 --- !u!114 &114553345591572396
 MonoBehaviour:
   m_ObjectHideFlags: 1

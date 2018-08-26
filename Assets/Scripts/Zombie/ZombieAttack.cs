@@ -26,18 +26,13 @@ namespace Complete
 
         void OnHitObject(Collider c)
         {
-
             IDamagable damageableObject = c.GetComponent<IDamagable>();
             if (damageableObject != null)
             {
 
               
                 damageableObject.TakeDamage(m_damagetaken);
-            }
-            else
-            {
-                Debug.Log("NO Idaamagel");
-            }
+            }           
         }
 
     }

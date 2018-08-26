@@ -3,7 +3,7 @@
 namespace Complete
 {
     public class LivingEntity : MonoBehaviour,  IDamagable
-    {
+    {        
         public float startingHealth;
         protected float health;
         protected bool dead;
@@ -31,7 +31,7 @@ namespace Complete
         }
 
         [ContextMenu("Self Destruct")]
-        protected void Die()
+        public virtual void Die()
         {
             dead = true;
             if (OnDeath != null)

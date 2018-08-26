@@ -7,9 +7,11 @@ namespace Complete
     [Serializable]
     public class ZombieManager : LivingEntity
     {
-
+        [Header ("Effects")]
         public ParticleSystem deathEffect;
         public ParticleSystem damageEffect;
+        public AudioClip deathSound;
+        public AudioClip damageSound;
 
         public void Start()
         {
@@ -32,16 +34,26 @@ namespace Complete
 
             if (damage >= health)
             {
+                AudioManager.instance.PlaySound(deathSound);
                 ShowDamageAnimation(deathEffect);
             }
-            else {
+            else
+            {
+                AudioManager.instance.PlaySound(damageSound);
                 ShowDamageAnimation(damageEffect);
             }
 
             base.TakeDamage(damage);
         }
 
+        public override void Die()
+        {
+          
+
+           
+            base.Die();
 
 
+        }
     }
 }
