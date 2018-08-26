@@ -4,18 +4,21 @@ using Complete;
 
 public class AudioManager : MonoBehaviour
 {
+
     public float masterVolumePercent;
     public float sfxVolumePercent;
-  
+   
     public static AudioManager instance;
 
     Transform audioListener;
     Transform playerT;
 
-    SoundLibrary library;
+    
 
     void Awake()
     {
+
+
         instance = this;
 
         audioListener = FindObjectOfType<AudioListener>().transform;
@@ -39,8 +42,10 @@ public class AudioManager : MonoBehaviour
     {
         if (clip != null)
         {
-            AudioSource.PlayClipAtPoint(clip, audioListener.position, 1.0f);
+            AudioSource.PlayClipAtPoint(clip, audioListener.position, sfxVolumePercent * masterVolumePercent);
         }
     }
+
+
 
 }
