@@ -42,18 +42,21 @@ namespace Complete
         private float waveCountdown;
 
         public GameObject m_PlayerPrefab;             // Reference to the prefab the players will control.
+        public GameObject map;
 
-    
-
+        
         public GameObject gameOverPanel;
         public Text gameplay;
+
+        Bounds mapSize;
 
 
         private void Awake()
         {
+            mapSize = map.GetComponent<Renderer>().bounds;
         }
 
-        private void Start()
+            private void Start()
         {
             gameOverPanel.SetActive(false);
 
@@ -110,21 +113,20 @@ namespace Complete
 
             for (int i = 0; i < zombies.count; i++)
             {
-                float x = UnityEngine.Random.Range(36, 450);
-                float z = UnityEngine.Random.Range(36, 450);
-                Vector3 initial_location = new Vector3(x, 1, z);
-                Instantiate(zombies.m_ZombieRehab, initial_location, new Quaternion(0, 0, 0, 0));
+                Instantiate(zombies.m_ZombieRehab, GetRandomSpawnLocation(), new Quaternion(0, 0, 0, 0));
             }
         }
 
         private void SpawnAllPlayers()
         {
+            Instantiate(m_PlayerPrefab, GetRandomSpawnLocation(), new Quaternion(0, 0, 0, 0));
+        }
 
-            float x = UnityEngine.Random.Range(36, 450);
-            float z = UnityEngine.Random.Range(36, 450);
-            Vector3 initial_location = new Vector3(x, 1, z);
-            
-            Instantiate(m_PlayerPrefab, initial_location, new Quaternion(0, 0, 0, 0));
+        private Vector3 GetRandomSpawnLocation() {
+             
+            float xbounds = UnityEngine.Random.Range((mapSize.size.x / 2) * -1, (mapSize.size.x / 2));
+            float zbounds = UnityEngine.Random.Range((mapSize.size.z / 2) * -1, (mapSize.size.z / 2));
+            return new Vector3(xbounds, 1, zbounds);
         }
 
         // This is called from start and will run each phase of the game one after another.
