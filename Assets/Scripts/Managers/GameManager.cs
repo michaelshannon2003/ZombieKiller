@@ -123,7 +123,7 @@ namespace Complete
             float x = UnityEngine.Random.Range(36, 450);
             float z = UnityEngine.Random.Range(36, 450);
             Vector3 initial_location = new Vector3(x, 1, z);
-
+            
             Instantiate(m_PlayerPrefab, initial_location, new Quaternion(0, 0, 0, 0));
         }
 

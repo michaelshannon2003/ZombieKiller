@@ -94,7 +94,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4462728122054264}
   - component: {fileID: 20514747648415644}
-  - component: {fileID: 81821284773204576}
   m_Layer: 9
   m_Name: Camera
   m_TagString: Untagged
@@ -352,13 +351,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 2
---- !u!81 &81821284773204576
-AudioListener:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1842682319978414}
-  m_Enabled: 1
 --- !u!114 &114045881398929550
 MonoBehaviour:
   m_ObjectHideFlags: 1
