@@ -55,11 +55,11 @@ GameObject:
   - component: {fileID: 33798826426998832}
   - component: {fileID: 23217313355235156}
   - component: {fileID: 54198473892157138}
-  - component: {fileID: 114598014659107652}
   - component: {fileID: 114045881398929550}
   - component: {fileID: 136375607879282024}
   - component: {fileID: 143542568232740840}
   - component: {fileID: 114667986343447418}
+  - component: {fileID: 114237644745800826}
   m_Layer: 9
   m_Name: Players
   m_TagString: Player
@@ -372,7 +372,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SpawnLocation: {fileID: 4207822418803122}
   m_PlayerNumber: 1
---- !u!114 &114598014659107652
+--- !u!114 &114237644745800826
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -380,12 +380,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1471003821209772}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1df77a5edc21b0b478bc25b52dc0fdb8, type: 3}
+  m_Script: {fileID: 11500000, guid: c67b4ea35da50f742b46374838fe303b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_PlayerNumber: 1
-  m_Speed: 15
-  rotateSpeed: 5
+  m_Speed: 10
+  rotateSpeed: 10
 --- !u!114 &114667986343447418
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -398,11 +398,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingHealth: 100
+  moveSpeed: 5
   m_PlayerColor: {r: 0, g: 0, b: 0, a: 0}
   m_SpawnPoint: {fileID: 4886750112390396, guid: c9c8e6f3c64a8ee488f9a0567b8ee48f,
     type: 2}
   m_PlayerNumber: 0
-  m_Instance: {fileID: 0}
 --- !u!135 &135201013296412014
 SphereCollider:
   m_ObjectHideFlags: 1

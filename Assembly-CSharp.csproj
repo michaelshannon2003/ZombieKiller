@@ -72,6 +72,7 @@
     <Compile Include="Assets\Scripts\Camera\MultipleDisplays.cs" />
     <Compile Include="Assets\Scripts\Character\IDamagable.cs" />
     <Compile Include="Assets\Scripts\Character\LivingEntity.cs" />
+    <Compile Include="Assets\Scripts\Character\MovementController.cs" />
     <Compile Include="Assets\Scripts\Managers\DisplayEventController.cs" />
     <Compile Include="Assets\Scripts\Managers\EventManager.cs" />
     <Compile Include="Assets\Scripts\Managers\GameManager.cs" />
