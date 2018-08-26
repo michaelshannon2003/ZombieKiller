@@ -41,12 +41,9 @@ namespace Complete
         public float timeBetweenWaves = 5f;
         private float waveCountdown;
 
-
-        private List<ZombieManager> m_zombies = new List<ZombieManager>();               // A collection of managers for enabling and disabling different aspects of the tanks.        
         public GameObject m_PlayerPrefab;             // Reference to the prefab the players will control.
 
-        private List<PlayerManager> m_players = new List<PlayerManager>();               // A collection of managers for enabling and disabling different aspects of the tanks.
-
+    
 
         public GameObject gameOverPanel;
         public Text gameplay;
@@ -99,7 +96,7 @@ namespace Complete
             {
 
                 gameOverPanel.SetActive(true);
-                DestroyZombies();              
+      
 
                 gameplay.text = "Hey !!! " + PlayerNameScoreBoard.displayname + ",  You died";
                 EventManager.TriggerEvent("Message", "GameOver");
@@ -116,14 +113,7 @@ namespace Complete
                 float x = UnityEngine.Random.Range(36, 450);
                 float z = UnityEngine.Random.Range(36, 450);
                 Vector3 initial_location = new Vector3(x, 1, z);
-                ZombieManager zombie = new ZombieManager()
-                {
-                    m_Instance = Instantiate(zombies.m_ZombieRehab, initial_location, new Quaternion(0, 0, 0, 0)) as GameObject,
-                    m_ZombieNumber = i + 1,
-                };
-
-                m_zombies.Add(zombie);
-
+                Instantiate(zombies.m_ZombieRehab, initial_location, new Quaternion(0, 0, 0, 0));
             }
         }
 
@@ -134,15 +124,7 @@ namespace Complete
             float z = UnityEngine.Random.Range(36, 450);
             Vector3 initial_location = new Vector3(x, 1, z);
 
-            PlayerManager player = new PlayerManager()
-            {
-                m_Instance =
-                    Instantiate(m_PlayerPrefab, initial_location, new Quaternion(0, 0, 0, 0)) as GameObject,
-                m_PlayerNumber = 1,
-            };
-
-            m_players.Add(player);
-
+            Instantiate(m_PlayerPrefab, initial_location, new Quaternion(0, 0, 0, 0));
         }
 
         // This is called from start and will run each phase of the game one after another.
@@ -164,7 +146,6 @@ namespace Complete
         {
             // Stop tanks from moving.
             // DisableTankControl();
-            DestroyZombies();
             state = SpawnState.COUNTING;
             waveCountdown = timeBetweenWaves;
             nextWave++;
@@ -191,7 +172,6 @@ namespace Complete
 
         private bool PlayersRemain()
         {
-            Debug.Log("PlayersRemain");
             if (FindObjectOfType<PlayerManager>() != null)
             { return true; }
             else
@@ -199,35 +179,7 @@ namespace Complete
                 return false;
             }
         }
-       
-
-        private void ZombieControl(bool state)
-        {
-            foreach (ZombieManager zombie in m_zombies)
-            {
-                zombie.EnableControl(state);
-            }
-        }
-
-        private void DestroyPlayers()
-        {
-            foreach (PlayerManager player in m_players)
-            {
-                Destroy(player.m_Instance);
-            }
-
-        }
-
-        private void DestroyZombies()
-        {
-            foreach (ZombieManager zombie in m_zombies)
-            {
-                Destroy(zombie.m_Instance);
-            }
-            m_zombies.Clear();
-
-        }
-
+         
     }
 
 

@@ -27,12 +27,11 @@ namespace Complete
         void OnHitObject(Collider c)
         {
 
-            Debug.Log("Hitting " + c.name);
             IDamagable damageableObject = c.GetComponent<IDamagable>();
             if (damageableObject != null)
             {
 
-                Debug.Log("Taking damage " + c.name);
+              
                 damageableObject.TakeDamage(m_damagetaken);
             }
             else

@@ -25,6 +25,11 @@ namespace Complete
             }
         }
 
+        public virtual void ShowDamageAnimation(ParticleSystem particlesystem)
+        {
+            Destroy(Instantiate(particlesystem.gameObject, transform.position, transform.rotation) as GameObject, particlesystem.startLifetime);
+        }
+
         [ContextMenu("Self Destruct")]
         protected void Die()
         {

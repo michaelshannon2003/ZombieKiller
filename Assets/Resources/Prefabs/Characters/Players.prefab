@@ -397,7 +397,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf050b5b04088574f9ad341ded20555f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 3000
+  startingHealth: 100
   m_PlayerColor: {r: 0, g: 0, b: 0, a: 0}
   m_SpawnPoint: {fileID: 4886750112390396, guid: c9c8e6f3c64a8ee488f9a0567b8ee48f,
     type: 2}
