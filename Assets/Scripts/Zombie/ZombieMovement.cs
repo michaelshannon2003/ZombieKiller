@@ -7,13 +7,19 @@ namespace Complete
     {
         public float m_Speed = 1f;                 // How fast the tank moves forward and back.
         private Rigidbody m_Rigidbody;              // Reference used to move the tank.
-       
-        GameObject[] players;
+        private bool hasTarget;
+        PlayerManager player;
 
         private void Awake ()
         {
             m_Rigidbody = GetComponent<Rigidbody> ();
-            players = GameObject.FindGameObjectsWithTag("Player");
+            // player = GameObject.FindGameObjectWithTag("Player");
+            player = FindObjectOfType<PlayerManager>() ;
+            if (player != null)
+            {
+                hasTarget = true;
+                player.OnDeath += OnTargetDeath;
+            }
         }
 
 
@@ -22,42 +28,35 @@ namespace Complete
             // When the tank is turned on, make sure it's not kinematic.
             m_Rigidbody.isKinematic = false;
 
-            // Also reset the input values.
-          
+            // Also reset the input values.          
         }
-
 
         private void OnDisable ()
         {
             // When the tank is turned off, set it to kinematic so it stops moving.
             m_Rigidbody.isKinematic = true;
-
-         
         }
 
-    
+        void OnTargetDeath()
+        {
+            hasTarget = false;           
+        }
+
 
         private void FixedUpdate()
         {
+            if (hasTarget) { Move(); }
             
-            Move ();
           
         }
 
 
         private void Move ()
         {
-            GameObject closestPlayer = GetClosestPlayer();
-             m_Rigidbody.transform.position = Vector3.MoveTowards(m_Rigidbody.transform.position, closestPlayer.transform.position, m_Speed * Time.deltaTime);
+             m_Rigidbody.transform.position = Vector3.MoveTowards(m_Rigidbody.transform.position, player.transform.position, m_Speed * Time.deltaTime);
          
         }
 
-        GameObject GetClosestPlayer()
-        {
-            return players.OrderBy(player => (player.transform.position - m_Rigidbody.transform.position).sqrMagnitude)
-                           .FirstOrDefault();
-
-        }
 
 
 

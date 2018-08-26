@@ -47,7 +47,11 @@ namespace Complete
             base.Start();
         }
 
-      
+        public override void TakeDamage(float damage)
+        {
+
+            base.TakeDamage(damage);
+        }
 
     }
 }
