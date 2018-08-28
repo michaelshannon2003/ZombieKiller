@@ -32,7 +32,7 @@ namespace Complete
         public override void TakeDamage(float damage)
         {
 
-
+            Debug.Log( "Zombie takes " + damage + " damage");
             if (damage >= health)
             {
                 AudioManager.instance.PlaySound(deathSound);

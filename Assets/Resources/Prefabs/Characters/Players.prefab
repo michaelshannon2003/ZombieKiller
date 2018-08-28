@@ -363,7 +363,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SpawnLocation: {fileID: 4207822418803122}
-  m_PlayerNumber: 1
 --- !u!114 &114237644745800826
 MonoBehaviour:
   m_ObjectHideFlags: 1

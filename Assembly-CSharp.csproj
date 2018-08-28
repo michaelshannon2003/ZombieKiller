@@ -85,6 +85,7 @@
     <Compile Include="Assets\Scripts\Player\Weapons.cs" />
     <Compile Include="Assets\Scripts\RestartGame.cs" />
     <Compile Include="Assets\Scripts\ScoreBoard\PlayerNameScoreBoard.cs" />
+    <Compile Include="Assets\Scripts\Shell\Explosion.cs" />
     <Compile Include="Assets\Scripts\Shell\ShellExplosion.cs" />
     <Compile Include="Assets\Scripts\Shell\WeaponStats.cs" />
     <Compile Include="Assets\Scripts\UI\UIDirectionControl.cs" />

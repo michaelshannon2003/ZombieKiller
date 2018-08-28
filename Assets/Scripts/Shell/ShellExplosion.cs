@@ -34,9 +34,7 @@ namespace Complete
 
                 damageableObject.TakeDamage(m_damagetaken);
             }
-            else {
-              
-            }
+          
         }
 
 

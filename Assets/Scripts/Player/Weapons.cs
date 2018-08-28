@@ -13,9 +13,6 @@ namespace Complete
 
         public Transform SpawnLocation;
 
-
-        public int m_PlayerNumber = 1;              // Used to identify the different players.
-
         private string m_FireButton;                // The input axis that is used for launching shells.
 
         private List<GameObject> weaponlist = new List<GameObject>();
@@ -43,7 +40,7 @@ namespace Complete
 
         private void Start()
         {
-            m_FireButton = "Fire" + m_PlayerNumber;
+            m_FireButton = "Fire1";
             SetActiveCurrentWeapon();
         }
 

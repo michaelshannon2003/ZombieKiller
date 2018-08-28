@@ -27,7 +27,7 @@ GameObject:
   - component: {fileID: 114097177871539470}
   - component: {fileID: 64674632211793410}
   - component: {fileID: 114884780595958626}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ShootingZombie
   m_TagString: Zombies
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4773159115412404}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: FireLocation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -125,8 +125,8 @@ Rigidbody:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1586688700593384}
   serializedVersion: 2
-  m_Mass: 20
-  m_Drag: 100000000
+  m_Mass: 1
+  m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
@@ -184,7 +184,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 201020d22db525e499f36bcf8621c751, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_damagetaken: 100
+  m_damagetaken: 200
 --- !u!114 &114884780595958626
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -202,3 +202,4 @@ MonoBehaviour:
   damageEffect: {fileID: 198000014159833656, guid: a3768c8a9d1b90d4bb0eb0e4bdbe730c,
     type: 2}
   deathSound: {fileID: 8300000, guid: cd8ca3b7804724bdeac39433cf57cacd, type: 3}
+  damageSound: {fileID: 0}

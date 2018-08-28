@@ -33,10 +33,6 @@ namespace Complete
 
             m_playerMovement = GetComponent<PlayerMovement>();
             m_Weapons = GetComponent<Weapons>();
-          
-            m_Weapons.m_PlayerNumber = m_PlayerNumber;
-
-        
 
             foreach (MeshRenderer renderer in GetComponentsInChildren<MeshRenderer>())
             {
@@ -49,7 +45,7 @@ namespace Complete
 
         public override void TakeDamage(float damage)
         {
-
+            Debug.Log("Players health is " + health);
             base.TakeDamage(damage);
         }
 

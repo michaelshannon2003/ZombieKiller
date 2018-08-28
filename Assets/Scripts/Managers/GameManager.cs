@@ -128,7 +128,7 @@ namespace Complete
 
             float xbounds = UnityEngine.Random.Range((mapSize.size.x / 2) * -1, (mapSize.size.x / 2));
             float zbounds = UnityEngine.Random.Range((mapSize.size.z / 2) * -1, (mapSize.size.z / 2));
-            return new Vector3(xbounds, 1, zbounds);
+            return new Vector3(xbounds, 2, zbounds);
         }
 
         // This is called from start and will run each phase of the game one after another.
