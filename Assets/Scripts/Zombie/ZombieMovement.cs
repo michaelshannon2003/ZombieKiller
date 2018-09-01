@@ -54,7 +54,8 @@ namespace Complete
         private void Move ()
         {
              m_Rigidbody.transform.position = Vector3.MoveTowards(m_Rigidbody.transform.position, player.transform.position, m_Speed * Time.deltaTime);
-         
+            transform.LookAt(player.transform);
+
         }
 
 

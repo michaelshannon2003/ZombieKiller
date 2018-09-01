@@ -45,7 +45,6 @@ namespace Complete
 
         public override void TakeDamage(float damage)
         {
-            Debug.Log("Players health is " + health);
             base.TakeDamage(damage);
         }
 

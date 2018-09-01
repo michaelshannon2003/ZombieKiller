@@ -36,7 +36,6 @@ GameObject:
   - component: {fileID: 4364032230315734}
   - component: {fileID: 33185955153270674}
   - component: {fileID: 23618450469693626}
-  - component: {fileID: 135201013296412014}
   m_Layer: 9
   m_Name: Sphere
   m_TagString: Player
@@ -108,7 +107,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1471003821209772}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 47.398422, y: 0.9, z: 43.60207}
   m_LocalScale: {x: 0.4, y: 0.8, z: 0.4}
   m_Children:
   - {fileID: 4334108286316884}
@@ -391,21 +390,8 @@ MonoBehaviour:
   startingHealth: 100
   moveSpeed: 5
   m_PlayerColor: {r: 0, g: 0, b: 0, a: 0}
-  m_SpawnPoint: {fileID: 4886750112390396, guid: c9c8e6f3c64a8ee488f9a0567b8ee48f,
-    type: 2}
+  m_SpawnPoint: {fileID: 0}
   m_PlayerNumber: 0
---- !u!135 &135201013296412014
-SphereCollider:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1468762171855620}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!136 &136324387471266390
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -428,8 +414,8 @@ CapsuleCollider:
   m_Material: {fileID: 13400000, guid: d586aa3c175205b4a9d9d8b9c8052abf, type: 2}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 1
+  m_Radius: 1
+  m_Height: 3
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!143 &143542568232740840

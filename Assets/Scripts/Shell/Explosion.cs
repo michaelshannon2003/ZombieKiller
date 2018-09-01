@@ -46,11 +46,7 @@ namespace Complete
             if (damageableObject != null)
             {
                 damageableObject.TakeDamage(m_damagetaken);
-            }
-            else
-            {
-
-            }
+            }          
         }
 
         private void OnDrawGizmos()

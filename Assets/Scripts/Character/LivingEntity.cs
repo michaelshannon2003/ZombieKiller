@@ -2,8 +2,8 @@
 
 namespace Complete
 {
-    public class LivingEntity : MonoBehaviour,  IDamagable
-    {        
+    public class LivingEntity : MonoBehaviour, IDamagable
+    {
         public float startingHealth;
         protected float health;
         protected bool dead;
@@ -12,15 +12,18 @@ namespace Complete
 
         public virtual void Start()
         {
+            dead = false;
             health = startingHealth;
         }
 
         public virtual void TakeDamage(float damage)
         {
-            health -= damage;
 
+            health -= damage;
             if (health <= 0 && !dead)
             {
+
+                Debug.Log(name + " is taking damage");
                 Die();
             }
         }
@@ -33,12 +36,14 @@ namespace Complete
         [ContextMenu("Self Destruct")]
         public virtual void Die()
         {
-            dead = true;
             if (OnDeath != null)
             {
                 OnDeath();
+
             }
+        
             GameObject.Destroy(gameObject);
+
         }
     }
 }

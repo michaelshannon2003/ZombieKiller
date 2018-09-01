@@ -10,10 +10,12 @@ public class Shooting : MonoBehaviour
     public float shotInterval = 0.5f;
     private float shotTime = 0;
     GameObject player;
+    Animator animator;
 
     private void Awake()
     { 
         player = GameObject.FindGameObjectWithTag("Player");
+        animator = GetComponent<Animator>();
     }
 
     public void Update()
@@ -25,8 +27,20 @@ public class Shooting : MonoBehaviour
 
             if (distance >= minimumDistanceFromPlayer && (Time.time - shotTime) > shotInterval)
             {
-                LookAtTarget();
+                Debug.Log("Checking for animation for " + gameObject.name);
+                if (animator != null)
+                {
+                    Debug.Log("Setting animation for " + gameObject.name);
+                    animator.SetBool("IsWithinDistance", false);
+                }
                 Shoot();
+            }
+            else
+            {
+                if (animator != null)
+                {
+                    animator.SetBool("IsWithinDistance", true);
+                }
             }
         }
     }

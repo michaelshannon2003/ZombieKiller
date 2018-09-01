@@ -17,7 +17,7 @@ namespace Complete
         {
 
             if (!other.CompareTag(tag) && other.gameObject.layer != LayerMask.NameToLayer("Environment"))
-            {                
+            {
                     OnHitObject(other);               
             }
                 Destroy(gameObject);
@@ -31,7 +31,6 @@ namespace Complete
             IDamagable damageableObject = c.GetComponent<IDamagable>();
             if (damageableObject != null)
             {
-
                 damageableObject.TakeDamage(m_damagetaken);
             }
           

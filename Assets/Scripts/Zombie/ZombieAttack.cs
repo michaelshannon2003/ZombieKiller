@@ -29,8 +29,6 @@ namespace Complete
             IDamagable damageableObject = c.GetComponent<IDamagable>();
             if (damageableObject != null)
             {
-
-              
                 damageableObject.TakeDamage(m_damagetaken);
             }           
         }
