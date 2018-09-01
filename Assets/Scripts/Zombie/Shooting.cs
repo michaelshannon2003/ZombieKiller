@@ -31,16 +31,13 @@ public class Shooting : MonoBehaviour
                 if (animator != null)
                 {
                     Debug.Log("Setting animation for " + gameObject.name);
-                    animator.SetBool("IsWithinDistance", false);
+                    animator.SetBool("IsWithinDistance", true);
                 }
                 Shoot();
             }
             else
             {
-                if (animator != null)
-                {
-                    animator.SetBool("IsWithinDistance", true);
-                }
+                animator.SetBool("IsWithinDistance", false);
             }
         }
     }

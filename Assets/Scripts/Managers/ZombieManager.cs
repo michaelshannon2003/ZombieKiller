@@ -15,10 +15,13 @@ namespace Complete
         public AudioClip damageSound;
         Animator animimator;
         bool is_not_dying;
+
         public void Start()
         {
+           
             is_not_dying = false;
                animimator = GetComponent<Animator>();
+            animimator.SetBool("IsDead", false);
             foreach (MeshRenderer renderer in GetComponentsInChildren<MeshRenderer>())
             {
 
@@ -33,8 +36,8 @@ namespace Complete
 
         public override void TakeDamage(float damage)
         {
-            
-            if (damage >= health && !is_not_dying )
+
+            if (damage >= health && !is_not_dying)
             {
                 is_not_dying = true;
                 StartCoroutine(DeathAnimations(damage));
@@ -52,12 +55,30 @@ namespace Complete
         
         IEnumerator DeathAnimations(float damage)
         {
+            animimator.SetBool("IsDead", true);
+            animimator.SetTrigger("Dead");
+
+            Debug.Log(animimator.GetCurrentAnimatorClipInfo(0)[0].clip.name);
             AudioManager.instance.PlaySound(deathSound);
-            ShowDamageAnimation(deathEffect); 
-            animimator.SetTrigger("Death");
-            yield return new WaitForSeconds(animimator.GetCurrentAnimatorStateInfo(0).length);
-           
+
+            ShowDamageAnimation(deathEffect);
+            StartCoroutine(WaitForDeathAnimation());
+            yield return new WaitUntil(() => animimator.GetCurrentAnimatorClipInfo(0)[0].clip.name.Contains("Dead"));
+
+            Debug.Log(animimator.GetCurrentAnimatorClipInfo(0)[0].clip.length);
+            yield return new WaitUntil(() => animimator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 0.9f);
+
+
+            Debug.Log(animimator.GetCurrentAnimatorClipInfo(0)[0].clip.name);
             base.TakeDamage(damage);
+        }
+
+        IEnumerator WaitForDeathAnimation()
+        {
+            Debug.Log(animimator.GetCurrentAnimatorClipInfo(0)[0].clip.name);
+            yield return new WaitUntil(() => animimator.GetCurrentAnimatorClipInfo(0)[0].clip.name.Contains("Dead"));
+
+            Debug.Log(animimator.GetCurrentAnimatorClipInfo(0)[0].clip.name);
         }
 
     }
