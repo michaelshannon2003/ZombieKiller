@@ -93,7 +93,6 @@
     <Compile Include="Assets\Scripts\Zombie\ZombieAttack.cs" />
     <Compile Include="Assets\Scripts\Zombie\ZombieMovement.cs" />
     <None Include="Assets\EffectExamples\Shared\Shaders\SurfaceShader_VC.shader" />
-    <None Include="Assets\Raw Mocap Data\Animations\_CompleteAnimationList.txt" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>E:/workspace/ZombieKiller/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
