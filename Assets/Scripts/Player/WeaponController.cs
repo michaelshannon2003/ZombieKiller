@@ -4,14 +4,14 @@ using UnityEngine;
 
 namespace Complete
 {
-    public class Weapons : MonoBehaviour
+    public class WeaponController : MonoBehaviour
     {
         #region EventPublisher
         //  public delegate void DisplayWeaponSwitch(string message);
         //  public static event DisplayWeaponSwitch OnWeaponEventMessage;
         #endregion EventPublisher
 
-        public Transform SpawnLocation;
+        private Transform SpawnLocation;
 
         private string m_FireButton;                // The input axis that is used for launching shells.
 
@@ -28,6 +28,10 @@ namespace Complete
 
         private void Awake()
         {
+            SpawnLocation = transform.Find("FireLocation").transform;
+
+            Debug.Log(SpawnLocation.transform);
+
             foreach (GameObject prefabweapon in Resources.LoadAll<GameObject>("Prefabs/Weapons"))
             {
                 GameObject weapon = Instantiate(prefabweapon, SpawnLocation.position, SpawnLocation.rotation);
@@ -35,6 +39,8 @@ namespace Complete
 
                 weapon.transform.parent = SpawnLocation.transform;
                 weaponlist.Add(weapon);
+
+              
             }
         }
 

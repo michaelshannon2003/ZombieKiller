@@ -6,6 +6,7 @@ namespace Complete
     [Serializable]
     [RequireComponent(typeof(MovementController))]
     [RequireComponent(typeof(CharacterController))]
+    [RequireComponent(typeof(WeaponController))]
 
     public class PlayerManager : LivingEntity
     {
@@ -17,8 +18,6 @@ namespace Complete
         public Transform m_SpawnPoint;                          // The position and direction the tank will have when it spawns.        
         [HideInInspector] public int m_PlayerNumber;            // This specifies which player this the manager for.        
 
-        private PlayerMovement m_playerMovement;
-        private Weapons m_Weapons;
         private GameObject m_CanvasGameObject;                  // Used to disable the world space UI during the Starting and Ending phases of each round.
 
         MovementController controller;
@@ -30,10 +29,8 @@ namespace Complete
 
         public override void Start()
         {
-
-            m_playerMovement = GetComponent<PlayerMovement>();
-            m_Weapons = GetComponent<Weapons>();
-
+         
+            
             foreach (MeshRenderer renderer in GetComponentsInChildren<MeshRenderer>())
             {
 

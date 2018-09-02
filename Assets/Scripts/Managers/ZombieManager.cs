@@ -16,7 +16,7 @@ namespace Complete
         Animator animimator;
         bool is_not_dying;
 
-        public void Start()
+        public override void Start()
         {
            
             is_not_dying = false;
