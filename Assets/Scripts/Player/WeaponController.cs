@@ -28,9 +28,12 @@ namespace Complete
 
         private void Awake()
         {
-            SpawnLocation = transform.Find("FireLocation").transform;
 
-            Debug.Log(SpawnLocation.transform);
+            SpawnLocation = transform.Find("FireLocation");
+
+            if (!SpawnLocation) {
+                Debug.Log("Add a game object called FireLocation to your object");
+            }
 
             foreach (GameObject prefabweapon in Resources.LoadAll<GameObject>("Prefabs/Weapons"))
             {
@@ -39,8 +42,6 @@ namespace Complete
 
                 weapon.transform.parent = SpawnLocation.transform;
                 weaponlist.Add(weapon);
-
-              
             }
         }
 

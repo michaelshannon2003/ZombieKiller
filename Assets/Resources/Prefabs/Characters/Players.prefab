@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4207822418803122}
   m_Layer: 9
-  m_Name: FireLocation
+  m_Name: FireLocation2
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -54,11 +54,11 @@ GameObject:
   - component: {fileID: 33798826426998832}
   - component: {fileID: 23217313355235156}
   - component: {fileID: 54198473892157138}
-  - component: {fileID: 114045881398929550}
   - component: {fileID: 136375607879282024}
   - component: {fileID: 143542568232740840}
   - component: {fileID: 114667986343447418}
   - component: {fileID: 114237644745800826}
+  - component: {fileID: 114747409682409028}
   m_Layer: 9
   m_Name: Players
   m_TagString: Player
@@ -350,18 +350,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 2
---- !u!114 &114045881398929550
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1471003821209772}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: faaa5f8ceba7c9c4faf055f6e4359c98, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SpawnLocation: {fileID: 4207822418803122}
 --- !u!114 &114237644745800826
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -392,6 +380,17 @@ MonoBehaviour:
   m_PlayerColor: {r: 0, g: 0, b: 0, a: 0}
   m_SpawnPoint: {fileID: 0}
   m_PlayerNumber: 0
+--- !u!114 &114747409682409028
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1471003821209772}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b23ee05e9ecbb64fa6c19025128a7a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!136 &136324387471266390
 CapsuleCollider:
   m_ObjectHideFlags: 1
